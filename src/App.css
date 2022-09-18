@@ -1,13 +1,168 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Nunito&display=swap');
+
+* {
+   box-sizing: border-box;
    padding: 0;
    margin: 0;
-   box-sizing: border-box;
-   font-size: inherit;
+   color: inherit;
    font-weight: inherit;
-   /* color: inherit; */
 }
 
-body{
-   background-color: black;
+body {
+   display: grid;
+   align-items: center;
+   font-family: 'Nunito', sans-serif;
+   font-size: 14px;
+   font-weight: 300;
    color: white;
+   background-color: black;
+}
+
+.container {
+   width: 100%;
+   max-width: 600px;
+   margin: 0 auto;
+   padding: 0 20px;
+}
+
+
+/* Navbar */
+.navbar {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   background-color: rgba(19, 19, 19, 0.993);
+   align-items: center;
+   padding: 10px 0;
+}
+
+.navbar__inner {
+   display: flex;
+   justify-content: space-between;
+   margin: 0 auto;
+   align-items: center;
+   position: relative;
+}
+
+.vpn{
+   position: absolute;
+   margin-left: 50%;
+   transform: translateX(-50%);
+   
+}
+
+.signOut {
+   background-color: rgb(0, 6, 129);
+   border: none;
+   padding: 5px 15px;
+   cursor: pointer;
+   transition: background-color 0.2s;
+}
+
+.signOut:hover {
+   background-color: rgb(0, 8, 161);
+}
+
+
+/* Login Page */
+.login-page {
+   display: grid;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+}
+
+
+/* Chat Page */
+.chat {
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+/* Chat messages */
+
+.messages-area {
+   flex-grow: 1;
+   word-break: break-all;
+   padding: 40px 0 40px;
+}
+
+.message {
+   margin: 30px 0;
+   display: grid;
+   grid-template-columns: 45px 1fr 30px;
+   gap: 5px;
+}
+
+.message__photo {
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+}
+
+.message__name {
+   color: wheat;
+   font-weight: 400;
+   font-size: 15px;
+}
+
+.date {
+   text-align: right;
+   margin-top: 10px;
+   margin-left: 15px;
+   font-size: 11px;
+   color: rgb(197, 197, 197);
+}
+
+.date__day{
+   margin-left: 8px;
+}
+
+/* Chat Form */
+
+.form {
+   position: fixed;
+   width: 100%;
+   max-width: 600px;
+   margin: 0 auto;
+   text-align: center;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-color: rgba(19, 19, 19, 0.993);
+   display: flex;
+   justify-content: space-between;
+}
+
+.form__inner {
+   display: flex;
+   justify-content: center;
+}
+
+.form__input {
+   width: 100%;
+   background-color: transparent;
+   border: none;
+   padding: 10px 20px;
+   border-right: 5px solid black;
+}
+
+.form__input:focus {
+   outline: none !important;
+}
+
+.form__btn {
+   background-color: transparent;
+   border: none;
+   cursor: pointer;
+   float: right;
+   padding: 15px 20px;
+   transition: background-color 0.2s;
+}
+
+.form__btn:hover {
+   background-color: rgb(32, 32, 32);
 }
