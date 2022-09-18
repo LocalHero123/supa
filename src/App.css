@@ -1,0 +1,13 @@
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-size: inherit;
+   font-weight: inherit;
+   /* color: inherit; */
+}
+
+body{
+   background-color: black;
+   color: white;
+}
