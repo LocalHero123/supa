@@ -16,8 +16,10 @@ export default function Chat() {
          setValue('')
       }
    }
-   window.scrollTo(0, 999999)
-
+   
+   setTimeout(() => {
+      window.scrollTo(0, 999999)
+   }, 1);
 
    return (
       <div className='Chat'>
