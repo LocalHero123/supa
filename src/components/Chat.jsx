@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useRealtime } from 'react-supabase';
 import './../App.css';
 import { supabase } from './../client';
@@ -6,51 +6,27 @@ import Loader from './Loader';
 
 export default function Chat() {
    const [value, setValue] = useState('')
-   const [mess, setMess] = useState([])
 
-   // const [{ data: messages, error, fetching }, reexecute] = useRealtime('messages')
-
-   useEffect(() => {
-      getMessages()
-   }, [])
-
-
-   const messages = supabase
-      .from('messages')
-      .on('*', payload => {
-         console.log('Change received!1', payload)
-      })
-      .subscribe()
-
-
-   async function getMessages() {
-      let { data, error } = await supabase.from('messages').select('*')
-      setMess(data)
-   }
+   const [{ data: messages, error, fetching }, reexecute] = useRealtime('messages')
 
    async function createMessage(e) {
       e.preventDefault()
       if (value !== '') {
          const { data, error } = await supabase.from('messages').insert({ message: value })
          setValue('')
-         getMessages()
-
-         const messages = supabase
-            .from('messages')
-            .on('*', payload => {
-               console.log('Change received!', payload)
-            })
-            .subscribe()
       }
    }
-
+   
+   setTimeout(() => {
+      window.scrollTo(0, 999999)
+   }, 1);
 
    return (
       <div className='Chat'>
          <div className="container">
             <div className="messages-area">
-               {/* {fetching && <Loader />} */}
-               {mess && mess.map(i =>
+               {fetching && <Loader />}
+               {messages && messages.map(i =>
                   <div className='message' key={i.id}>
                      <img className='message__photo' src='https://sun2.6789.userapi.com/s/v1/ig2/ko_i9YzeASmx2JlChnicHp52BzfOgcdO1n_5PRtp3zkczstejwAH22A59kykmzObREbf58sd81es-gy5O3hzN6su.jpg?size=50x50&quality=96&crop=0,2,402,402&ava=1' alt="Ава" />
 
