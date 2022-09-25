@@ -45,13 +45,6 @@ body {
    position: relative;
 }
 
-.vpn{
-   position: absolute;
-   margin-left: 50%;
-   transform: translateX(-50%);
-   
-}
-
 .signOut {
    background-color: rgb(0, 6, 129);
    border: none;
@@ -82,12 +75,12 @@ body {
    justify-content: space-between;
 }
 
-/* Chat messages */
+/* Chat messages - Messages.jsx */
 
 .messages-area {
    flex-grow: 1;
    word-break: break-all;
-   padding: 40px 0 40px;
+   padding: 40px 0 25px;
 }
 
 .message {
@@ -121,7 +114,7 @@ body {
    margin-left: 8px;
 }
 
-/* Chat Form */
+/* Chat Form - SendMessage.jsx */
 
 .form {
    position: fixed;
@@ -159,10 +152,8 @@ body {
    border: none;
    cursor: pointer;
    float: right;
-   padding: 15px 20px;
+   width: 160px;
+   height: 45px;
    transition: background-color 0.2s;
-}
-
-.form__btn:hover {
-   background-color: rgb(32, 32, 32);
+   -webkit-tap-highlight-color:  transparent;
 }

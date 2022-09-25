@@ -15,8 +15,8 @@ function Loader() {
    return (
       <div style={style}>
          <div>
-            <img style={{ width: '70px', display: 'block', margin: '0 auto'}} src="https://i.gifer.com/origin/b3/b3a856ef146732dc3ff6c6ea5ea56ff1_w200.gif" />
-            <div style={{margin: '10px 0 0 8px', color: 'white'}}>Загрузка...</div>
+            <img style={{ width: '70px', display: 'block', margin: '0 auto' }} src="https://i.gifer.com/origin/b3/b3a856ef146732dc3ff6c6ea5ea56ff1_w200.gif" />
+            <div style={{ margin: '10px 0 0 8px', color: 'white' }}>Загрузка...</div>
          </div>
       </div>
    )
